@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary Extension</title>
+  <style>
+    body {
+      background: url("background.gif") no-repeat fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      width: 500px;
+      color:white;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0093d1;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 8px auto; /* Center the button horizontally */
+      display: block; /* Make it a block-level element for centering */
+      border-radius: 3px;
+    }
+    button:hover {
+      background-color: #0093d1;
+    }
+    .slider-container {
+      margin: 0 auto; /* Center the slider horizontally */
+      margin-bottom: 10px;
+      width: 100%; /* Set width of the slider container */
+    }
+    .slider {
+      background-color:  #0093d1;
+      -webkit-appearance: none;
+      width: 60%;
+      height: 15px;
+      border-radius: 5px;
+      outline: none;
+      opacity: 1;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background:white;
+      cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #0093d1;
+      cursor: pointer;
+    }
+    #summary{
+      background-color: whitesmoke;
+      color: black;
+      border-radius: 5px;
+      width: 450px;
+      height: 200px;
+      display: none; /* Initially hide both divs */
+      margin: 5px auto; /* Center both horizontally */
+
+    }
+    .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(40, 40, 40, 0.9); /* Dark background color with higher opacity */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.header img {
+  height: 60px; /* Adjusted logo height */
+  width: auto; /* Allow the logo width to adjust automatically */
+  margin-right: 10px; /* Spacing between logo and text */
+}
+
+.header p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* White text color */
+  margin: 0; /* Remove margin to prevent extra space */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 1px; /* Add slight letter spacing for better readability */
+}
+
+    #keywords {
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 10px;
+  border-radius: 5px;
+  width:fit-content;
+  display: none; /* Initially hide */
+  margin: 0 auto; /* Center horizontally */
+  color: black; /* Text color */
+}
+#video-container {
+      margin: 0 auto; /* Center the video container */
+      width: 450px;
+      height: 160px; /* Set width of the video container */
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <div class="header">
+      <img src="logo.png" alt="logo"/>
+      <p>Youtube Video Summary</p>
+    </div>
+    <div id="video-container"></div>
+    
+    <div class="slider-container" style=" margin-top: 1px; color: white; display: flex; justify-content: center; align-items: center;">
+      Summary Length : <input type="range" min="25" max="75" value="50" class="slider" id="summaryLengthSlider">
+      <p id="sliderValue"> 50% </p>
+
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <textarea id="summary" readonly></textarea></div>
+    <button id="summarizeBtn">Summarize</button>
+    
+    <div id="keywords"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
