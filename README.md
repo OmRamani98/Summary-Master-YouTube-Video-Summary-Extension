@@ -1,13 +1,17 @@
-# YouTube-Video-Summariser
-A chrome extension to summarise long YouTube videos by utilising YouTube's transcript feature.
+# Summary Master YouTube Video Summary Extension
 
-## Requirements
-- The following python modules must be installed to run the API
-  - ```flask```
-  - ```youtube-transcript-api```
-    
+Summary Master YouTube Video Summary Extension is a Chrome extension designed to summarize YouTube videos using their transcripts. This extension integrates with the Summary Master web application to provide users with summarized content directly from YouTube videos.
 
-## Instructions
-- Run ```app.py``` to start the summarizer API.
-- Load the custom extension into any Chromium browser.
-- Go to any YouTube video and click on the extension logo to start summarizing.
+## Features
+
+- Embed YouTube Video: Displays the YouTube video thumbnail and embeds the video in an iframe.
+- Summarize Video: Allows users to summarize the content of the YouTube video using the Summary Master web application.
+- Adjust Summary Length: Users can adjust the length of the summary using a slider.
+- Display Summary and Keywords: Shows the generated summary and the extracted keywords from the video content.
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/OmRamani98/Summary-Master-YouTube-Video-Summary-Extension.git
